@@ -1,0 +1,41 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  background: rgb(48, 48, 90);
+  align-items: center;
+  padding: 0 20px;
+}
+
+.containerLogo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.weatherApp {
+  font-size: 30px;
+  padding-left: 10px;
+  color: rgb(238, 238, 238);
+}
+
+.menuNavbar{
+  display:flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about{
+  font-size: larger;
+  color: rgb(238, 238, 238);
+}
+
+.about:hover{
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+      display: flex;
+      flex-direction: column;
+  }
+}

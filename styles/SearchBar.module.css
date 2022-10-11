@@ -1,0 +1,35 @@
+.inputText {
+    border-radius: 10px;
+    height: 30px;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: large;
+    padding-left: 10px;
+    border: none;
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+
+.inputButton {
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 30px;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size:large;
+    padding-left: 10px;
+    border: none;
+    letter-spacing: 1px;
+    background: rgb(238, 238, 238);
+}
+
+.inputButton:hover{
+    background-color: rgb(94, 223, 94);
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .inputText {
+        width: 150px;
+    }
+  }
