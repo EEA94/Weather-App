@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Card.module.css';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 export default function Card ({min, max, name, img, onClose, id, description, visibility, humidity, wind}) {
     return (
@@ -8,7 +8,7 @@ export default function Card ({min, max, name, img, onClose, id, description, vi
         
         <div className={styles.cardBody}>
               <h3 className={styles.cardTitle}>{name}</h3>
-              <img src={"https://openweathermap.org/img/wn/"+img+"@2x.png"} alt={name} />
+              <Image src={`https://openweathermap.org/img/wn/${img}@2x.png`} width={100} height={100} alt={name}></Image>
               <small className={styles.description}>{description}</small>
           </div>
 
