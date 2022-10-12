@@ -33,9 +33,9 @@ export default function Home() {
       coords.push(geolocationPosition.coords.latitude , geolocationPosition.coords.longitude,);
 
       if(coords){
-        fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${key}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${key}`)
         .then(r=>r.json())
-        .then((res)=>fetch(`http://api.openweathermap.org/data/2.5/weather?q=${res[0].name},${res[0].state},${res[0].country}&appid=${key}&units=metric`))
+        .then((res)=>fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res[0].name},${res[0].state},${res[0].country}&appid=${key}&units=metric`))
         .then(r => r.json())
         .then((recurso) => {
           if(recurso.main !== undefined){
@@ -69,7 +69,7 @@ export default function Home() {
   }
 
   function onSearch(ciudad) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${key}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${key}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         console.log(recurso)
