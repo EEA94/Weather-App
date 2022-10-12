@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import Nav from './components/Nav.jsx';
 import Cards from './components/Cards.jsx';
 import { useState, useEffect} from 'react';
-const key = process.env.NEXT_PUBLIC_KEY;
+
 
 export default function Home() {
   const [cities, setCities] = useState([]);
@@ -33,9 +33,9 @@ export default function Home() {
       coords.push(geolocationPosition.coords.latitude , geolocationPosition.coords.longitude,);
 
       if(coords){
-        fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${key}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${process.env.apiKey}`)
         .then(r=>r.json())
-        .then((res)=>fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res[0].name},${res[0].state},${res[0].country}&appid=${key}&units=metric`))
+        .then((res)=>fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res[0].name},${res[0].state},${res[0].country}&appid=${process.env.apiKey}&units=metric`))
         .then(r => r.json())
         .then((recurso) => {
           if(recurso.main !== undefined){
@@ -69,7 +69,7 @@ export default function Home() {
   }
 
   function onSearch(ciudad) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${key}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${process.env.apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         console.log(recurso)
