@@ -39,7 +39,6 @@ export default function Home() {
         .then(r => r.json())
         .then((recurso) => {
           if(recurso.main !== undefined){
-            console.log(recurso);
             const ciudad = {
               min: recurso.main.temp_min.toFixed(1),
               max: recurso.main.temp_max.toFixed(1),
@@ -63,7 +62,6 @@ export default function Home() {
     }
 
     function error(err) {
-      console.log(err);
       return err.message
     }
   }
@@ -72,7 +70,6 @@ export default function Home() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${process.env.apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
-        console.log(recurso)
         if(recurso.main !== undefined){
           const ciudad = {
               min: recurso.main.temp_min.toFixed(1),
